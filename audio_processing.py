@@ -8,6 +8,7 @@ import os
 def improve_audio_quality(audio_file_name: str):
 
     sr=44100
+    print(audio_file_name)
     with AudioFile(audio_file_name).resampled_to(sr) as f:
         audio = f.read(f.frames)
     
