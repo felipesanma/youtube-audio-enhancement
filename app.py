@@ -61,6 +61,7 @@ if st.session_state["button1"]:
             st.stop()
     st.info(st.session_state.is_downloaded)
     st.info(st.session_state.audio_file_name)
+    st.audio(st.session_state.audio_file_name, format="audio/wav")
     with st.spinner("Improving Audio Quality...."):
         try:
             st.session_state.improved_audio_file_name = improve_audio_quality(st.session_state.audio_file_name)
