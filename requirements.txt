@@ -1,3 +1,5 @@
 pytube
 streamlit
 streamlit-extras
+pedalboard
+noisereduce
