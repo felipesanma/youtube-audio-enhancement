@@ -26,8 +26,8 @@ def improve_audio_quality(audio_file_name: str):
 
     with AudioFile('audio_enhenced.wav', 'w', sr, effected.shape[0]) as f:
         f.write(effected)
-    os.remove(audio_file_name)
     
+
     return 'audio_enhenced.wav'
 
 def download_youtube_video_to_audio(video_id: str):

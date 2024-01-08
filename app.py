@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import json
 from audio_processing import download_youtube_video_to_audio, improve_audio_quality
-
+import os
 # SETUP ------------------------------------------------------------------------
 favicon = Image.open("favicon.ico")
 st.set_page_config(
@@ -77,4 +77,6 @@ if st.session_state["button1"]:
     data=data,
     file_name="audio.wav",
     mime='audio/wav')
+
+    os.remove(st.session_state.audio_file_name)
     st.snow()
