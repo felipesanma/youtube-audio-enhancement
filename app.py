@@ -59,7 +59,8 @@ if st.session_state["button1"]:
             st.error("Something went grong...")
             st.exception(e)
             st.stop()
-    
+    st.info(st.session_state.is_downloaded)
+    st.info(st.session_state.audio_file_name)
     with st.spinner("Improving Audio Quality...."):
         try:
             st.session_state.improved_audio_file_name = improve_audio_quality(st.session_state.audio_file_name)
