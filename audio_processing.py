@@ -11,7 +11,7 @@ def improve_audio_quality(audio_file_name: str):
     with AudioFile(audio_file_name).resampled_to(sr) as f:
         audio = f.read(f.frames)
     
-    os.remove(audio_file_name)
+    
     reduced_noise = nr.reduce_noise(y=audio, sr=sr, stationary=True, prop_decrease=0.75)
 
     board = Pedalboard([
@@ -26,6 +26,7 @@ def improve_audio_quality(audio_file_name: str):
 
     with AudioFile('audio_enhenced.wav', 'w', sr, effected.shape[0]) as f:
         f.write(effected)
+    os.remove(audio_file_name)
     
     return 'audio_enhenced.wav'
 
